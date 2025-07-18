@@ -4,7 +4,7 @@ import { createClient } from 'redis';
 
 dotenv.config();
 
-const mongoClient = new MongoClient(process.env.MONGO_URI);
+const mongoClient = new MongoClient(process.env.MONGO_URL);
 const redisClient = new createClient({ url: process.env.REDIS_URL });
 
 export const connectDB = async () => {
@@ -17,5 +17,5 @@ export const connectDB = async () => {
   }
 };
 
-export const getDB = () => mongoClient.db();
-export { redisClient };
+export const mongo = () => mongoClient.db();
+export { redisClient as redis };

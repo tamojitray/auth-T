@@ -1,2 +1,2 @@
 # auth-T
-A authentication api
+A authentication API
